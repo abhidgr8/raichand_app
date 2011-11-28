@@ -1,0 +1,25 @@
+<h1>Listing raichands</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @raichands.each do |raichand| %>
+  <tr>
+    <td><%= raichand.name %></td>
+    <td><%= raichand.email %></td>
+    <td><%= link_to 'Show', raichand %></td>
+    <td><%= link_to 'Edit', edit_raichand_path(raichand) %></td>
+    <td><%= link_to 'Destroy', raichand, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Raichand', new_raichand_path %>
